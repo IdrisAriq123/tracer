@@ -5,97 +5,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Sekolah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --text-color: #000000;
-            --bg-input-color: #4782B2;
-            --bg-input-2-color: #70BFFF;
-            --bg-1-color: #1A2189;
-            --bg-2-color: #FFFFFF;
-            --alert-btn-color: #DC060F;
-        }
+        /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Styling untuk container dan header */
-        .container {
-            margin: 20px auto;
-            max-width: 800px;
-            padding: 10px;
-        }
+/* Define root variables */
+:root {
+    --text-color: #000000;
+    --bg-input-color: #4782B2;
+    --bg-input-2-color: #70BFFF;
+    --bg-1-color: #1A2189;
+    --bg-2-color: #FFFFFF;
+}
 
-        h1 {
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-            color: var(--bg-1-color);
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
+/* Style body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e6f7ff;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-        /* Styling untuk form */
-        .form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+/* Style container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
 
-        .form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
+/* Hover effect for container */
+.container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
 
-        .form input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 14px;
-        }
+/* Style heading */
+h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--bg-1-color);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
 
-        .form input::placeholder {
-            color: #aaa;
-            font-style: italic;
-        }
+/* Style form groups */
+.form-group {
+    margin-bottom: 20px;
+}
 
-        /* Styling tombol */
-        .form button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: var(--bg-2-color);
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #555;
+}
 
-        .form button:hover {
-            background-color: #45a049;
-        }
+/* Style input fields */
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.1em;
+    transition: border-color 0.3s;
+}
 
-        /* Responsif untuk perangkat kecil */
-        @media (max-width: 768px) {
-            .form {
-                padding: 15px;
-            }
+.form-group input:focus {
+    border-color: var(--bg-input-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(71, 130, 178, 0.5);
+}
 
-            .form input {
-                padding: 8px;
-            }
+/* Button style */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--bg-input-color);
+    color: var(--bg-2-color);
+    font-size: 1.3em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-            .form button {
-                font-size: 14px;
-            }
-        }
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .form-group input {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 1.1em;
+    }
+}
+
     </style>
 </head>
 

@@ -15,6 +15,29 @@
             flex-direction: column;
             margin: 0;
         }
+
+        /* Styling untuk h2 */
+        h2 {
+            font-size: 24px; /* Ukuran font */
+            font-weight: bold; /* Ketebalan font */
+            text-align: center; /* Mengatur agar teks berada di tengah */
+            color: #333; /* Warna teks */
+            margin: 20px 0; /* Jarak atas dan bawah */
+            padding: 10px; /* Padding di sekitar teks */
+            background-color: #f4f4f4; /* Warna latar belakang */
+            border-radius: 8px; /* Sudut tumpul */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+        }
+
+        /* Responsif untuk ukuran layar lebih kecil */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 20px; /* Ukuran font lebih kecil di layar kecil */
+                margin: 15px 0; /* Menyesuaikan jarak */
+                padding: 8px; /* Menyesuaikan padding */
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -94,13 +117,19 @@
     <script src="{{ asset('js/admin.js') }}"></script>
     <footer class="footer">
         <div class="footer-content">
-            <p>Copyright © 2024-2027 Andika. Hak Cipta. All rights reserved.</p>
+            <p>©2025 TracerStudy by IdrisAriq. | All rights reserved.</p>
             <div class="social-icons">
+                <a href="https://www.google.com/maps/place/SMK+Antartika+1+Sidoarjo/" class="social-icon">
+                    <img src="{{ asset('icons/location-removebg-preview.png') }}" alt="Logo">
+                </a>
                 <a href="#" class="social-icon-1">
-                    <img src="{{ asset('images/tk.png') }}" alt="Logo">
+                    <img src="{{ asset('icons/instagram_logo_icon_181283.webp') }}" alt="Logo">
                 </a>
                 <a href="#" class="social-icon">
-                    <img src="{{ asset('images/ig.jfif') }}" alt="Logo">
+                    <img src="{{ asset('icons/facebook-new.png') }}" alt="Logo">
+                </a>
+                <a href="https://youtube.com/@smkantartika1sidoarjo726" class="social-icon">
+                    <img src="{{ asset('icons/youtube_logo_icon_206627.png') }}" alt="Logo">
                 </a>
             </div>
         </div>

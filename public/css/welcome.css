@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #00b646;
     line-height: 1.6;
     color: #333;
 }
@@ -157,85 +157,120 @@ nav .burger-icon img {
     }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
-/* Chart Section */
-/* Gaya untuk bagian informasi diagram */
-.chart-info {
-    text-align: center;
+/* Efek Glassmorphism */
+.news-section, .event-section {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.chart-info h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin: 0;
+/* Efek hover pada section */
+.news-section:hover, .event-section:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Tata letak umum untuk setiap bagian diagram */
-.chart-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
+/* Judul section */
+.news-section h2, .event-section h2 {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 800;
+    border-bottom: 4px solid #ffda79;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
 }
 
-.chart-container {
-    width: 80%;
-    max-width: 800px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+/* News & Event Items */
+.news-item, .event-item {
+    padding: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
     border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-canvas {
-    width: 100% !important;
-    height: auto !important;
+/* Efek hover pada item */
+.news-item:hover, .event-item:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.03);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Gaya untuk legenda diagram */
-.chart-legend {
-    margin-top: 15px;
-    text-align: center;
+/* Menghilangkan border dari item terakhir */
+.news-item:last-child, .event-item:last-child {
+    border-bottom: none;
 }
 
-.chart-legend ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
+/* Judul item */
+.news-item h3, .event-item h3 {
+    margin: 8px 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffeb3b;
+    text-transform: capitalize;
+    transition: color 0.3s;
 }
 
-.chart-legend ul li {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 0.9rem;
-    color: #555;
+/* Efek hover pada judul */
+.news-item h3:hover, .event-item h3:hover {
+    color: #ff9800;
 }
 
-.chart-legend p {
-    font-size: 1rem;
-    color: #777;
-    margin: 0;
+/* Paragraf */
+.news-item p, .event-item p {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    opacity: 0.95;
 }
 
-/* Responsif untuk layar kecil */
+/* Animasi muncul (Fade In) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Terapkan animasi fade-in */
+.news-item, .event-item {
+    animation: fadeIn 0.8s ease-in-out both;
+}
+
+/* Responsif */
 @media (max-width: 768px) {
-    .chart-container {
+    .container {
         width: 90%;
     }
-    
-    .chart-info h3 {
-        font-size: 1.3rem;
+
+    .news-section h2, .event-section h2 {
+        font-size: 22px;
     }
-    
-    .chart-legend ul li {
-        font-size: 0.8rem;
+
+    .news-item h3, .event-item h3 {
+        font-size: 20px;
+    }
+
+    .news-item p, .event-item p {
+        font-size: 14px;
     }
 }
-
-
 /* Footer */
 .footer {
     background-color: #2c3e50;

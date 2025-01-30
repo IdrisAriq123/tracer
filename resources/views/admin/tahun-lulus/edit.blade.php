@@ -5,76 +5,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Tahun Lulus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            height: 800px;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-        }
+/* Define root variables */
+:root {
+    --text-color: #000000;
+    --bg-input-color: #4782B2;
+    --bg-input-2-color: #70BFFF;
+    --bg-1-color: #1A2189;
+    --bg-2-color: #FFFFFF;
+}
 
-        :root {
-            --text-color: #000000;
-            --bg-input-color: #4782B2;
-            --bg-input-2-color: #70BFFF;
-            --bg-1-color: #1A2189;
-            --bg-2-color: #FFFFFF;
-        }
+/* Style body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e6f7ff;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+/* Style container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
 
-        h1 {
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-            color: var(--bg-1-color);
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
+/* Hover effect for container */
+.container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+/* Style heading */
+h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--bg-1-color);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
+/* Style form groups */
+.form-group {
+    margin-bottom: 20px;
+}
 
-        .form-group input {
-            width: 90%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-        }
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #555;
+}
 
-        button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: var(--bg-2-color);
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+/* Style input fields */
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.1em;
+    transition: border-color 0.3s;
+}
 
-        button:hover {
-            background-color: #45a049;
-        }
+.form-group input:focus {
+    border-color: var(--bg-input-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(71, 130, 178, 0.5);
+}
+
+/* Button style */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--bg-input-color);
+    color: var(--bg-2-color);
+    font-size: 1.3em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .form-group input {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 1.1em;
+    }
+}
+
     </style>
 </head>
 

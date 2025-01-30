@@ -59,45 +59,17 @@
             </ul>
         </div>
     </nav>
-    {{-- <form action="{{ route('alumni.Dataalumni.index') }}" method="GET" class="form-inline mb-3">
-        <div class="form-group">
-            <label for="tahun_lulus">Tahun Lulus:</label>
-            <select name="tahun_lulus" id="tahun_lulus" class="form-control mx-2">
-                <option value="">Semua</option>
-                @foreach ($listTahunLulus as $tahun)
-                    <option value="{{ $tahun->tahun_lulus }}"
-                        {{ request('tahun_lulus') == $tahun->tahun_lulus ? 'selected' : '' }}>
-                        {{ $tahun->tahun_lulus }}
-                    </option>
-                @endforeach
-            </select>
+    <!-- Profile Information -->
+    <div class="profile-info">
+            <img src="{{ asset('images/profil.png') }}" alt="Profile Picture" class="profile-img">
+            <div class="profile-details">
+                <p><strong>Nama:</strong> {{ $alumnis->nama_depan ?? 'Data alumni tidak ditemukan.' }} {{ $alumnis->nama_belakang ?? '' }}</p>
+                <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
+                <p><strong>Jurusan:</strong> {{ $alumnis->konsentrasiKeahlian->konsentrasi_keahlian ?? 'Jurusan tidak ditemukan.' }}</p>
+                <p><strong>Tahun Lulus:</strong> {{ $alumnis->tahunLulus->tahun_lulus ?? 'Tahun Lulus tidak ditemukan.' }}</p>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="konsentrasi_keahlian">Konsentrasi Keahlian:</label>
-            <select name="konsentrasi_keahlian" id="konsentrasi_keahlian" class="form-control mx-2">
-                <option value="">Semua</option>
-                @foreach ($listKonsentrasiKeahlian as $konsentrasi)
-                    <option value="{{ $konsentrasi->konsentrasi_keahlian }}"
-                        {{ request('konsentrasi_keahlian') == $konsentrasi->konsentrasi_keahlian ? 'selected' : '' }}>
-                        {{ $konsentrasi->konsentrasi_keahlian }}
-                    </option>
-                @endforeach
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="status_alumni">Status Alumni:</label>
-            <select name="status_alumni" id="status_alumni" class="form-control mx-2">
-                <option value="">Semua</option>
-                @foreach ($listStatusAlumni as $status)
-                    <option value="{{ $status->status }}"
-                        {{ request('status_alumni') == $status->status ? 'selected' : '' }}>
-                        {{ $status->status }}
-                    </option>
-                @endforeach
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary ml-2">Cari</button>
-    </form> --}}
+    </div>
 
     <div class="container">
         <h1 class="mt-4">Daftar Alumni</h1>

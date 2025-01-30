@@ -1,116 +1,134 @@
 :root {
-    --text-color: #000000;
-    --bg-input-color: #4782B2;
-    --bg-input-2-color: #70BFFF;
-    --bg-1-color: #1A2189;
-    --bg-2-color: #FFFFFF;
-    --alert-btn-color: #DC060F;
+    --primary-color: #007BFF; /* Blue */
+    --secondary-color: #28a745; /* Green */
+    --accent-color: #ffc107; /* Yellow */
+    --text-color: #333;
+    --bg-color: #f9f9f9; /* Lighter background */
+    --btn-color: #DC3545; /* Red */
+    --hover-bg-color: #e9ecef;
+    --box-shadow: rgba(0, 0, 0, 0.1);
 }
 
-/* Container */
-.container {
-    width: 100%;
-    margin: 30px auto;
-    background-color: var(--bg-2-color);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
+/* General page styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
 }
 
-/* Heading */
-.container h2 {
+/* Styling for the heading */
+h2 {
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--bg-input-color);
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 2px var(--text-color);
+    font-size: 30px;
+    color: var(--primary-color);
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Table */
+/* Table styling */
 .table {
     width: 100%;
     border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 6px 18px var(--box-shadow);
+    border-radius: 10px;
+    background-color: #fff;
     overflow: hidden;
+    margin-top: 20px;
+}
+
+.table thead {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .table th,
 .table td {
-    padding: 12px 15px;
-    text-align: center;
-    border-bottom: 1px solid var(--text-color);
-}
-.table td .btn {
-    display: inline-block;
-    margin: 0 5px; /* Memberikan jarak horizontal */
-    vertical-align: middle; /* Menyesuaikan posisi tombol */
+    padding: 16px 24px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease;
 }
 
 .table th {
-    background-color: var(--bg-input-color);
-    color: var(--bg-2-color);
     font-weight: bold;
-    text-transform: uppercase;
 }
 
-.table tr:nth-child(even) {
-    background-color: #f8f8f8;
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-.table tr:hover {
-    background-color: #e6f7ff;
-}
-
-/* Button */
-.btn {
-    text-transform: uppercase;
-    padding: 8px 12px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    color: var(--bg-2-color);
-    background-color: var(--bg-input-2-color);
-    border: none;
+.table tbody tr:hover {
+    background-color: var(--hover-bg-color); /* Slightly lighter */
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-right: 8px;
-    /* Memberi jarak antar tombol */
 }
 
-.btn:hover {
-    background-color: var(--bg-input-color);
-    transform: scale(1.05);
+.table tbody tr td {
+    color: var(--text-color);
 }
 
+/* Button styling for Detail and Delete */
 .btn-primary {
-    background-color: var(--bg-input-color);
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
 }
 
 .btn-primary:hover {
-    background-color: var(--bg-1-color);
+    background-color: #0056b3; /* Darker blue */
+    transform: translateY(-2px);
 }
 
 .btn-danger {
-    background-color: var(--alert-btn-color);
+    background-color: var(--btn-color);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
 }
 
 .btn-danger:hover {
-    background-color: #a1030b;
+    background-color: #c82333; /* Darker red */
+    transform: translateY(-2px);
 }
 
-/* Layout Adjustments */
-.container .table-actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
+/* Inline form styling for the delete button */
+form {
+    display: inline;
 }
 
-.container .table-actions .btn {
-    margin-right: 10px;
+form button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table {
+        font-size: 12px;
+    }
+
+    .table th, .table td {
+        padding: 10px 14px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
 }

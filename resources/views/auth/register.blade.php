@@ -5,77 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #b3e7f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+       /* Font dan Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
 
-        .register-container {
-            background-color: #f2f2f2;
-            width: 300px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
+/* Efek Kaca Transparan */
+.register-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    width: 380px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
-        .register-container h2 {
-            margin-bottom: 20px;
-        }
+/* Efek Hover */
+.register-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
 
-        .register-container input {
-            width: 290px;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+.register-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
 
-        .register-container button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
+/* Input */
+.register-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
 
-        .register-container button:hover {
-            background-color: #45a049;
-        }
+/* Placeholder Styling */
+.register-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
 
-        .show-password {
-            display: flex;
-            align-items: center;
-            font-size: 12px;
-            margin: -10px 15px 0px 125px;
-            margin-top: -10px;
-        }
+.register-container input:focus {
+    outline: none;
+    border: 2px solid #4facfe;
+    background: rgba(255, 255, 255, 0.5);
+}
 
-        .show-password label {
-            cursor: pointer;
-        }
+/* Tombol Register */
+.register-container button {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 17px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
 
-        .register-container .extra-links {
-            margin-top: 10px;
-            font-size: 12px;
-        }
+.register-container button:hover {
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    transform: scale(1.05);
+}
 
-        .register-container .extra-links a {
-            color: #0066cc;
-            text-decoration: none;
-        }
+/* Show Password */
+.show-password {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 5px;
+    color: white;
+    justify-content: center;
+}
 
-        .register-container .extra-links a:hover {
-            text-decoration: underline;
-        }
+.show-password label {
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+/* Extra Links */
+.extra-links {
+    margin-top: 12px;
+    font-size: 14px;
+    color: white;
+}
+
+.extra-links a {
+    color: #ffeb3b;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+    color: #ffcc00;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 400px) {
+    .register-container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .register-container h2 {
+        font-size: 22px;
+    }
+
+    .register-container input {
+        font-size: 14px;
+    }
+
+    .register-container button {
+        font-size: 15px;
+    }
+}
+
     </style>
 </head>
 <body>

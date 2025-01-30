@@ -111,13 +111,19 @@
     <script src="{{ asset('js/admin.js') }}"></script>
     <footer class="footer">
         <div class="footer-content">
-            <p>Copyright © 2024-2027 Andika. Hak Cipta. All rights reserved.</p>
+            <p>©2025 TracerStudy by IdrisAriq. | All rights reserved.</p>
             <div class="social-icons">
+                <a href="https://www.google.com/maps/place/SMK+Antartika+1+Sidoarjo/" class="social-icon">
+                    <img src="{{ asset('icons/location-removebg-preview.png') }}" alt="Logo">
+                </a>
                 <a href="#" class="social-icon-1">
-                    <img src="{{ asset('images/tk.png') }}" alt="Logo">
+                    <img src="{{ asset('icons/instagram_logo_icon_181283.webp') }}" alt="Logo">
                 </a>
                 <a href="#" class="social-icon">
-                    <img src="{{ asset('images/ig.jfif') }}" alt="Logo">
+                    <img src="{{ asset('icons/facebook-new.png') }}" alt="Logo">
+                </a>
+                <a href="https://youtube.com/@smkantartika1sidoarjo726" class="social-icon">
+                    <img src="{{ asset('icons/youtube_logo_icon_206627.png') }}" alt="Logo">
                 </a>
             </div>
         </div>

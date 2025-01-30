@@ -1,134 +1,175 @@
 :root {
-    --text-color: #000000;
-    --bg-input-color: #4782B2;
-    --bg-input-2-color: #70BFFF;
-    --bg--bg-1-color: #1A2189;
-    --bg-2-color: #FFFFFF;
-    --alert-btn-color: #DC060F;
+    --primary-color: #007BFF; /* Blue */
+    --secondary-color: #28a745; /* Green */
+    --accent-color: #ffc107; /* Yellow */
+    --text-color: #333;
+    --bg-color: #f9f9f9; /* Lighter background */
+    --btn-color: #DC3545; /* Red */
+    --hover-bg-color: #e9ecef;
+    --box-shadow: rgba(0, 0, 0, 0.1);
 }
 
-/* Container */
-.container {
-    width: 100%;
-    margin: 30px auto;
+/* General page styling */
+body {
+    font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Heading */
-.container h1 {
+/* Styling for the heading */
+h1 {
     text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    color: var(--bg-input-color); /* Warna heading menggunakan --bg-input-color */
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 2px var(--text-color);
-}
-
-/* Button */
-.container .btn {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-top: 20px;
     text-transform: uppercase;
-    padding: 10px 15px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    color: var(--bg-2-color); /* Warna teks tombol */
-    display: inline-block;
-    margin-bottom: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for the 'Tambah Bidang Keahlian' button */
 .tmbh {
-    display: flex; /* Mengaktifkan Flexbox */
-    justify-content: flex-end; /* Mengatur tombol ke kanan */
-    margin-right: 20px; /* Menambahkan jarak dari sisi kanan */
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
 }
 
 .tmbh a {
-    border: #000000 solid 2px;
-    border-radius: 15px;
-    background-color: var(--bg-input-color);
-    color: var(--bg-2-color);
-    text-align: center;
-    padding: 10px 20px; /* Menambahkan padding untuk ukuran tombol */
-    text-decoration: none; /* Menghilangkan garis bawah pada teks */
-    font-weight: bold; /* Membuat teks lebih tebal */
-    transition: background-color 0.3s ease; /* Menambahkan efek hover */
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px var(--box-shadow);
+    transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tmbh a:hover {
-    background-color: var(--bg-1-color); /* Warna tombol saat hover */
-    color: var(--bg-2-color); /* Warna teks saat hover */
+    background-color: #218838; /* Darker Green */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--box-shadow);
 }
 
-.btn-primary {
-    background: var(--bg-input-2-color); /* Warna tombol primary */
-    border: none;
-}
- 
-.btn-primary:hover {
-    background: var(--bg-input-color); /* Warna hover tombol primary */
-}
-
-.btn-danger {
-    background-color: var(--alert-btn-color); /* Warna tombol danger */
-    border: none;
-}
-
-.btn-danger:hover {
-    background-color: #a1030b; /* Warna hover tombol danger */
-}
-
-.btn:hover {
-    transform: scale(1.05); /* Efek hover membesar */
-}
-
-/* Table */
+/* Table styling */
 .table {
     width: 100%;
     border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 6px 18px var(--box-shadow);
+    border-radius: 10px;
+    background-color: #fff;
     overflow: hidden;
+    margin-top: 20px;
+}
+
+.table thead {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .table th,
 .table td {
-    padding: 12px 15px;
-    text-align: center;
-    border-bottom: 1px solid var(--text-color); /* Border tabel */
+    padding: 16px 24px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease;
 }
 
 .table th {
-    background-color: var(--bg-input-color); /* Warna header tabel */
-    color: var(--bg-2-color); /* Warna teks header tabel */
     font-weight: bold;
-    text-transform: uppercase;
 }
 
-.table tr:nth-child(even) {
-    background-color: var(--bg-color); /* Warna baris genap */
-}
-  /* Warna garis khusus untuk kolom kedua */
-.table td:nth-child(1), table th:nth-child(1) {
-    border-right: 1px solid var(--text-color); /* Border tabel */
-}
-  /* Warna garis khusus untuk kolom kedua */
-.table td:nth-child(2), table th:nth-child(2) {
-    border-right: 1px solid var(--text-color); /* Border tabel */
-}
-.table td:nth-child(3), table th:nth-child(3) {
-    border-right: 1px solid var(--text-color); /* Border tabel */
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-.table td:last-child {
-    text-align: center;
+.table tbody tr:hover {
+    background-color: var(--hover-bg-color); /* Slightly lighter */
+    cursor: pointer;
+}
+
+.table tbody tr td {
+    color: var(--text-color);
+}
+
+.table tbody tr td a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.table tbody tr td a:hover {
+    color: #0069d9; /* Darker blue on hover */
+}
+
+/* Button styling for delete */
+.btn-danger {
+    background-color: var(--btn-color);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: translateY(-2px);
+}
+
+/* Inline form styling for the delete button */
+form {
+    display: inline;
+}
+
+form button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table {
+        font-size: 12px;
+    }
+
+    .table th, .table td {
+        padding: 10px 14px;
+    }
+
+    .tmbh a {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
 }

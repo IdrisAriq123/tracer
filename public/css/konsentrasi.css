@@ -1,180 +1,175 @@
 :root {
-    --text-color: #000000;
-    --bg-input-color: #4782B2;
-    --bg-input-2-color: #70BFFF;
-    --bg-1-color: #1A2189;
-    --bg-2-color: #FFFFFF;
-    --alert-btn-color: #DC060F;
+    --primary-color: #007BFF; /* Blue */
+    --secondary-color: #28a745; /* Green */
+    --accent-color: #ffc107; /* Yellow */
+    --text-color: #333;
+    --bg-color: #f9f9f9; /* Lighter background */
+    --btn-color: #DC3545; /* Red */
+    --hover-bg-color: #e9ecef;
+    --box-shadow: rgba(0, 0, 0, 0.1);
 }
 
-/* General container styles */
-.container {
-    margin-top: 20px;
-    background: #f0f8ff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+/* General page styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
 }
 
+/* Styling for the heading */
 h1 {
     text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    color: var(--bg-1-color);
+    font-size: 36px;
+    color: var(--primary-color);
     margin-top: 20px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Tambah button container */
+/* Styling for the 'Tambah Baru' button */
 .tmbh {
-    display: flex; /* Mengaktifkan Flexbox */
-    justify-content: flex-end; /* Mengatur tombol ke kanan */
-    margin-right: 20px; /* Menambahkan jarak dari sisi kanan */
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
 }
 
 .tmbh a {
-    border: #000000 solid 2px;
-    border-radius: 15px;
-    background-color: var(--bg-input-color);
-    color: var(--bg-2-color);
-    text-align: center;
-    padding: 10px 20px; /* Ukuran tombol */
-    text-decoration: none; /* Menghilangkan garis bawah */
-    font-weight: bold; /* Membuat teks lebih tebal */
-    transition: background-color 0.3s ease; /* Efek hover */
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px var(--box-shadow);
+    transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tmbh a:hover {
-    background-color: var(--bg-1-color); /* Warna tombol saat hover */
-    color: var(--bg-2-color); /* Warna teks saat hover */
+    background-color: #218838; /* Darker Green */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--box-shadow);
 }
 
-/* Table styles */
-table {
+/* Table styling */
+.table {
     width: 100%;
     border-collapse: collapse;
+    box-shadow: 0 6px 18px var(--box-shadow);
+    border-radius: 10px;
     background-color: #fff;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
-table thead {
-    background-color: var(--bg-1-color);
+.table thead {
+    background-color: var(--primary-color);
     color: #fff;
-}
-
-table th, table td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-table tbody tr:nth-child(even) {
-    background: #f9f9f9;
-}
-
-table tbody tr:hover {
-    background: #ffebf0;
-}
-
-/* Button styles */
-/* Button styles */
-.btn {
     text-transform: uppercase;
-    border-radius: 8px; /* Membuat sudut tombol lebih membulat */
+    letter-spacing: 1.5px;
+}
+
+.table th,
+.table td {
+    padding: 16px 24px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease;
+}
+
+.table th {
     font-weight: bold;
-    padding: 10px 20px; /* Memberikan ruang lebih untuk ukuran tombol */
-    font-size: 14px; /* Ukuran teks yang lebih proporsional */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tbody tr:hover {
+    background-color: var(--hover-bg-color); /* Slightly lighter */
     cursor: pointer;
-    transition: all 0.3s ease; /* Memberikan transisi halus untuk efek hover */
-    color: #fff; /* Warna teks default */
-    display: inline-block; /* Membuat tombol tidak mengambil satu baris penuh */
 }
 
-/* Success Button */
-.btn-success {
-    background-color: var(--bg-input-color);
-    border: 1px solid #4e9a2a; /* Memberikan border halus */
+.table tbody tr td {
+    color: var(--text-color);
 }
 
-.btn-success:hover {
-    background-color: var(--bg-1-color); /* Warna tombol saat hover */
+.table tbody tr td a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-/* Primary Button */
-.btn-primary {
-    background-color: var(--bg-input-color);
-    border: 1px solid #3e91ed; /* Memberikan border halus */
+.table tbody tr td a:hover {
+    color: #0069d9; /* Darker blue on hover */
 }
 
-.btn-primary:hover {
-    background-color: var(--bg-1-color); /* Warna tombol saat hover */
-}
-
-/* Danger Button */
+/* Button styling for delete */
 .btn-danger {
-    background-color: var(--alert-btn-color);
-    border: 1px solid #c1050d; /* Memberikan border halus */
+    background-color: var(--btn-color);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
 }
 
 .btn-danger:hover {
-    background-color: #a1030b; /* Warna lebih gelap saat hover */
+    background-color: #c82333;
+    transform: translateY(-2px);
 }
 
-/* Hover and Active Effects */
-.btn:hover {
-    opacity: 0.95;
-    transform: scale(1.05); /* Memberikan efek membesar sedikit */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
 }
 
-.btn:active {
-    transform: scale(0.98); /* Memberikan efek sedikit mengecil saat ditekan */
-    transition: transform 0.1s ease; /* Perubahan cepat untuk animasi active */
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: translateY(-2px);
 }
-a{
-    text-decoration: none;
+
+/* Inline form styling for the delete button */
+form {
+    display: inline;
 }
-.form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+
+form button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
     font-size: 14px;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table {
+        font-size: 12px;
+    }
 
+    .table th, .table td {
+        padding: 10px 14px;
+    }
 
-.form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: var(--bg-2-color);
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    .tmbh a {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
 }
-
-.form button:hover {
-    background-color: #45a049;
-}
-
-.form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #333;
-}
-.form {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-

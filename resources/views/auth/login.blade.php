@@ -6,106 +6,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #b3e7f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+        /* Font dan Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
 
-        .login-container {
-            background-color: #f2f2f2;
-            width: 300px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
+/* Efek Kaca Transparan */
+.login-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    width: 380px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
-        .login-container h2 {
-            margin-bottom: 20px;
-        }
+/* Efek Hover */
+.login-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
 
-        .login-container input {
-            width: 290px;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
 
-        .login-container button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
+/* Input */
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
 
-        .login-container button:hover {
-            background-color: #45a049;
-        }
+/* Placeholder Styling */
+.login-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
 
-        .social-login {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 15px 0;
-        }
+.login-container input:focus {
+    outline: none;
+    border: 2px solid #4facfe;
+    background: rgba(255, 255, 255, 0.5);
+}
 
-        .social-login img {
-            width: 30px;
-            cursor: pointer;
-        }
+/* Tombol Login */
+.login-container button {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 17px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
 
-        .login-container .extra-links {
-            margin-top: 10px;
-            font-size: 12px;
-        }
+.login-container button:hover {
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    transform: scale(1.05);
+}
 
-        .login-container .extra-links a {
-            color: #0066cc;
-            text-decoration: none;
-        }
+/* Social Login */
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 20px 0;
+}
 
-        .login-container .extra-links a:hover {
-            text-decoration: underline;
-        }
+.social-login img {
+    width: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
 
-        .show-password {
-            display: flex;
-            align-items: center;
-            font-size: 12px;
-            margin: -10px 15px 0px 125px;
-            margin-top: -10px;
-        }
+.social-login img:hover {
+    transform: scale(1.2);
+}
 
-        .kosong {
-            width: 400px;
-            height: 100%;
-        }
+/* Extra Links */
+.extra-links {
+    margin-top: 12px;
+    font-size: 14px;
+    color: white;
+}
 
-        .show-password input {
-            margin-left: 5px;
-        }
-        .login-icons {
-        display: flex;
-        gap: 10px; /* Jarak antar gambar */
-        justify-content: center;
-        align-items: center;
+.extra-links a {
+    color: #ffeb3b;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+    color: #ffcc00;
+}
+
+/* Show Password */
+.show-password {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 5px;
+    color: white;
+}
+
+.show-password input {
+    margin-left: 5px;
+}
+
+/* Login Icons */
+.login-icons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-icons img {
+    width: 38px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-icons img:hover {
+    transform: scale(1.15);
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 400px) {
+    .login-container {
+        width: 90%;
+        padding: 25px;
     }
-    .login-icons img {
-        transition: transform 0.2s ease;
+
+    .login-container h2 {
+        font-size: 22px;
     }
-    .login-icons img:hover {
-        transform: scale(1.1); /* Membesarkan gambar saat di-hover */
+
+    .login-container input {
+        font-size: 14px;
     }
+
+    .login-container button {
+        font-size: 15px;
+    }
+}
+
     </style>
 </head>
 
@@ -128,20 +197,6 @@
             </div>
             <button type="submit">Login</button>
         </form>
-
-        <p>Atau</p>
-        <div class="login-icons">
-            <a href="">
-                <img src="{{ asset('icons/gogle.png') }}" alt="Google Login" style="width: 50px; height: auto;">
-            </a>
-            <a href="">
-                <img src="{{ asset('icons/facebook.png') }}" alt="Facebook Login" style="width: 50px; height: auto;">
-            </a>
-            <a href="">
-                <img src="{{ asset('icons/apple.png') }}" alt="Apple Login" style="width: 50px; height: auto;">
-            </a>
-        </div>
-
 
         <div class="extra-links">
             <p>Don't have an account? <a href="{{ route('register') }}">Register</a></p>

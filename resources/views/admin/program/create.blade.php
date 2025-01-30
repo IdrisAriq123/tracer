@@ -6,102 +6,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tambah Program Keahlian</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Root Variables */
-        :root {
-            --bg-color: #f9f9f9;
-            --form-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            --label-color: #333;
-            --input-border: #ccc;
-            --input-focus: #4CAF50;
-            --button-bg: #007BFF;
-            --button-hover: #0056b3;
-            --text-color: #fff;
-        }
+        /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Container Styling */
-        .container {
-            max-width: 600px;
-            margin: 30px auto;
-            background-color: var(--bg-color);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: var(--form-shadow);
-            font-family: Arial, sans-serif;
-        }
+/* Style body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e6f7ff;
+    color: #333;
+    padding: 20px;
+}
 
-        /* Heading Styling */
-        .container h1 {
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: var(--input-focus);
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
+/* Style container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
 
-        /* Label Styling */
-        .container .form-group label {
-            font-size: 16px;
-            font-weight: bold;
-            color: var(--label-color);
-            display: block;
-            margin-bottom: 8px;
-        }
+/* Hover effect for container */
+.container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
 
-        /* Input Styling */
-        .container .form-group input,
-        .container .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--input-border);
-            border-radius: 5px;
-            font-size: 14px;
-            box-sizing: border-box;
-            margin-bottom: 15px;
-            transition: border-color 0.3s ease;
-        }
+/* Style heading */
+h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #1d72b8;
+    text-transform: uppercase;
+}
 
-        /* Focus Effects */
-        .container .form-group input:focus,
-        .container .form-group select:focus {
-            border-color: var(--input-focus);
-            outline: none;
-        }
+/* Style form group */
+.form-group {
+    margin-bottom: 20px;
+}
 
-        /* Button Styling */
-        .container button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: var(--button-bg);
-            color: var(--text-color);
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #555;
+}
 
-        .container button:hover {
-            background-color: var(--button-hover);
-        }
+/* Style input and select */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.1em;
+    transition: border-color 0.3s;
+}
 
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
+input:focus, select:focus {
+    border-color: #1d72b8;
+    outline: none;
+    box-shadow: 0 0 5px rgba(29, 114, 184, 0.5);
+}
 
-            .container h1 {
-                font-size: 24px;
-            }
+/* Button style */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #1d72b8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-            .container button {
-                font-size: 14px;
-            }
-        }
+button:hover {
+    background-color: #155a8a;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    button {
+        font-size: 1.1em;
+    }
+}
+
     </style>
 </head>
 
