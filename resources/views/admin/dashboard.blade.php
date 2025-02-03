@@ -15,7 +15,7 @@
     <nav>
         <div class="profile">
             <div class="logo">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                <a href="#">TracerStudy</a>
             </div>
             <div class="Username">
                 {{ Auth::user()->name }}
@@ -52,21 +52,6 @@
                 <button onclick="window.location='{{ route('tahun-lulus.index') }}';">Kelola Tahun Lulus</button>
                 <button onclick="window.location='{{ route('testimoni.index') }}';">Testimoni</button>
             </div>
-        </div>
-    </div>
-    <div class="news-events">
-        <h3>Berita dan Event Alumni</h3>
-        <div class="news-item">
-            <h4>Reuni Akbar 2025</h4>
-            <p>SMK Antartika 1 Sidoarjo mengundang semua alumni untuk menghadiri Reuni Akbar yang akan diadakan pada 10 Agustus 2025. Jangan lewatkan kesempatan ini untuk bertemu kembali dengan teman-teman lama!</p>
-        </div>
-        <div class="news-item">
-            <h4>Workshop Karir</h4>
-            <p>Workshop Karir akan diselenggarakan pada 15 September 2025, membahas tips dan trik mendapatkan pekerjaan serta pengalaman alumni yang telah sukses di berbagai bidang.</p>
-        </div>
-        <div class="news-item">
-            <h4>Pelatihan Wirausaha</h4>
-            <p>Pelatihan wirausaha akan diadakan untuk membekali alumni yang ingin membangun bisnis sendiri. Jadwal dan lokasi akan segera diumumkan.</p>
         </div>
     </div>
     <script src="{{ asset('js/admin.js') }}"></script>

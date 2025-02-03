@@ -10,163 +10,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Data Alumni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS untuk Select2 */
-        .select2-container .select2-selection--single {
-            height: 38px;
-            /* Tinggi elemen dropdown agar seimbang dengan input lainnya */
-            padding: 6px 12px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .select2-container .select2-selection--single .select2-selection__rendered {
-            line-height: 24px;
-            /* Agar teks tidak terpotong */
-        }
+/* Define root variables */
+:root {
+    --text-color: #000000;
+    --bg-input-color: #4782B2;
+    --bg-input-2-color: #70BFFF;
+    --bg-1-color: #1A2189;
+    --bg-2-color: #FFFFFF;
+}
 
-        .select2-container .select2-selection--single .select2-selection__arrow {
-            height: 36px;
-            right: 10px;
-        }
+/* Style body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e6f7ff;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
 
-        .select2-dropdown {
-            border-radius: 4px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            /* Efek bayangan untuk dropdown */
-        }
+/* Style container */
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
 
-        .select2-results__option {
-            padding: 8px 12px;
-            font-size: 14px;
-        }
+/* Hover effect for container */
+.container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
 
-        .select2-results__option--highlighted {
-            background-color: #4782B2;
-            /* Warna saat hover */
-            color: #fff;
-        }
+/* Style heading */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--bg-1-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
 
-        :root {
-            --text-color: #000000;
-            --bg-input-color: #4782B2;
-            --bg-input-2-color: #70BFFF;
-            --bg-1-color: #1A2189;
-            --bg-2-color: #FFFFFF;
-            --alert-btn-color: #DC060F;
-        }
+/* Style success alert */
+.alert {
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 6px;
+}
 
-        /* General Styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff;
-            color: var(--text-color);
-        }
+/* Style form */
+form {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        h1 {
-            text-align: center;
-            /* font-size: 28px; */
-            margin-top: 20px;
-            color: var(--bg-1-color);
-        }
+/* Form group */
+.form-group {
+    margin-bottom: 15px;
+}
 
-        /* Styling untuk form */
-        form {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+label {
+    display: block;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+}
 
-        form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
+/* Select input */
+select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.1em;
+    transition: border-color 0.3s;
+}
 
-        form input,
-        form select,
-        form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 14px;
-            background-color: #f9f9f9;
-            color: #333;
-            transition: border-color 0.3s ease;
-        }
+/* Text input */
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.1em;
+    transition: border-color 0.3s;
+}
 
-        form input:focus,
-        form select:focus,
-        form textarea:focus {
-            border-color: var(--bg-input-color);
-            outline: none;
-        }
+/* Focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--bg-input-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(71, 130, 178, 0.5);
+}
 
-        form button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: var(--bg-input-color);
-            color: var(--bg-2-color);
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+/* Adjust textarea height */
+textarea {
+    height: 100px;
+    resize: vertical;
+}
 
-        form button:hover {
-            background-color: var(--bg-1-color);
-        }
+/* Style button */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--bg-input-color);
+    color: var(--bg-2-color);
+    font-size: 1.3em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
 
-        /* Success Message */
-        .success {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            border-radius: 5px;
-        }
+button:hover {
+    background-color: #45a049;
+}
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            form {
-                padding: 15px;
-            }
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
 
-            form input,
-            form select,
-            form textarea {
-                padding: 8px;
-            }
+    h1 {
+        font-size: 2em;
+    }
 
-            form button {
-                font-size: 14px;
-            }
+    input,
+    select,
+    textarea {
+        padding: 10px;
+    }
 
-            h1 {
-                font-size: 24px;
-            }
-        }
+    button {
+        font-size: 1.1em;
+    }
+}
 
-        .form-group-active {
-            margin-bottom: 25px;
-        }
     </style>
 </head>
 

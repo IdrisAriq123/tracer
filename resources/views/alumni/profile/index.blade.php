@@ -20,7 +20,7 @@
     <nav>
         <div class="profile">
             <div class="logo">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                <a href="#">TracerStudy</a>
             </div>
             <div class="Username">
                 {{ Auth::user()->name }}

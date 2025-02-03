@@ -11,7 +11,7 @@
     <style>
         body {
         
-             height: 800px;
+            height: 800px;
             display: flex;
             flex-direction: column;
             margin: 0;
@@ -24,7 +24,7 @@
     <nav>
         <div class="profile">
             <div class="logo">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                <a href="http://127.0.0.1:8000/admin/dashboard">TracerStudy</a>
             </div>
             <div class="Username">
                 {{ Auth::user()->name }}

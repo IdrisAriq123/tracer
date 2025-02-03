@@ -8,124 +8,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Data Kuliah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
 
     <style>
-        :root {
-            --text-color: #000000;
-            --bg-input-color: #4782B2;
-            --bg-input-2-color: #70BFFF;
-            --bg-1-color: #1A2189;
-            --bg-2-color: #FFFFFF;
-            --alert-btn-color: #DC060F;
-        }
+        /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* General Styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff;
-            color: var(--text-color);
-        }
+/* Define root variables */
+:root {
+    --text-color: #000000;
+    --bg-input-color: #4782B2;
+    --bg-input-2-color: #70BFFF;
+    --bg-1-color: #1A2189;
+    --bg-2-color: #FFFFFF;
+}
 
-        h1 {
-            text-align: center;
-            /* font-size: 28px; */
-            margin-top: 20px;
-            color: var(--bg-1-color);
-        }
+/* Style body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e6f7ff;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
 
-        /* Styling untuk form */
-        form {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+/* Style container */
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
 
-        form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
+/* Hover effect for container */
+.container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
 
-        form input,
-        form select,
-        form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 14px;
-            background-color: #f9f9f9;
-            color: #333;
-            transition: border-color 0.3s ease;
-        }
+/* Style heading */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--bg-1-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
 
-        form input:focus,
-        form select:focus,
-        form textarea:focus {
-            border-color: var(--bg-input-color);
-            outline: none;
-        }
+/* Style success alert */
+.alert {
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 6px;
+}
 
-        form button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: var(--bg-input-color);
-            color: var(--bg-2-color);
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+/* Style form */
+form {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        form button:hover {
-            background-color: var(--bg-1-color);
-        }
+/* Form group */
+.form-group {
+    margin-bottom: 15px;
+}
 
-        /* Success Message */
-        .success {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            border-radius: 5px;
-        }
+label {
+    display: block;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+}
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            form {
-                padding: 15px;
-            }
+/* Select input */
+select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.1em;
+    transition: border-color 0.3s;
+}
 
-            form input,
-            form select,
-            form textarea {
-                padding: 8px;
-            }
+/* Text input */
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.1em;
+    transition: border-color 0.3s;
+}
 
-            form button {
-                font-size: 14px;
-            }
+/* Focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--bg-input-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(71, 130, 178, 0.5);
+}
 
-            h1 {
-                font-size: 24px;
-            }
-        }
-        .form-group-active {
-            margin-bottom: 25px;
-        }
+/* Adjust textarea height */
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Style button */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--bg-input-color);
+    color: var(--bg-2-color);
+    font-size: 1.3em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 1.1em;
+    }
+}
+
     </style>
 </head>
 

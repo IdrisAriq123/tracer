@@ -4,24 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman welcome</title>
+    <title>Halaman Welcome</title>
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300; 1,400;1,500;1,600;1,700;1, 800;1,900&display=swap');
+    </style>
 </head>
 
 <body>
-
     <nav>
         <div class="profile">
             <div class="logo">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo">
-            </div>
-            <div class="login">
-                <button onclick="window.location='{{ route('login') }}';">Login</button>
+                <a href="#">TracerStudy</a>
             </div>
         </div>
         <div class="menu">
-            <div class="menu-item">
-            </div>
             <div class="menu-item">
                 <button onclick="window.location='{{ route('login') }}';">Data Alumni</button>
             </div>
@@ -31,61 +28,19 @@
             <div class="menu-item">
                 <button onclick="window.location='{{ route('login') }}';">Tracer Kerja</button>
             </div>
-        </div>
-        <div class="menu_dropdown">
-            <button class="burger-icon" id="burgerMenu">
-                <img src="{{ asset('icons/dropdown.png') }}" alt="Icons">
-            </button>
-            <ul class="dropdown" id="dropdownMenu">
-                <button onclick="window.location='{{ route('login') }}';" class="dropdown-icon">
-                    <img src="{{ asset('icons/dropdown.png') }}" alt="Icons">
-                </button>
-                <button onclick="window.location='{{ route('login') }}';" class="dropdown-icon">
-                    <img src="{{ asset('icons/dropdown.png') }}" alt="Icons">
-                </button>
-            </ul>
+            <div class="login">
+                <button onclick="window.location='{{ route('login') }}';">Masuk</button>
+            </div>
         </div>
     </nav>
     <div class="top-content">
-        <div class="info-profil">
-            <div class="tabel-profil">
-                <div class="profil">
-                    <img src="{{ asset('images/profil.png' )}}" alt="profil">
-                </div>
-                <div class="profil-item">
-                    <p>Nama :</p>
-                </div>
-                <div class="profil-item">
-                    <p>Email :</p>
-                </div>
-                <div class="profil-item">
-                    <p>Jurusan :</p>
-                </div>
-                <div class="profil-item">
-                    <p>Tahun lulus :</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="news-events">
-        <h3>Berita dan Event Alumni</h3>
-        <div class="news-item">
-            <h4>Reuni Akbar 2025</h4>
-            <p>SMK Antartika 1 Sidoarjo mengundang semua alumni untuk menghadiri Reuni Akbar yang akan diadakan pada 10 Agustus 2025. Jangan lewatkan kesempatan ini untuk bertemu kembali dengan teman-teman lama!</p>
-        </div>
-        <div class="news-item">
-            <h4>Workshop Karir</h4>
-            <p>Workshop Karir akan diselenggarakan pada 15 September 2025, membahas tips dan trik mendapatkan pekerjaan serta pengalaman alumni yang telah sukses di berbagai bidang.</p>
-        </div>
-        <div class="news-item">
-            <h4>Pelatihan Wirausaha</h4>
-            <p>Pelatihan wirausaha akan diadakan untuk membekali alumni yang ingin membangun bisnis sendiri. Jadwal dan lokasi akan segera diumumkan.</p>
-        </div>
+        <h1>Selamat Datang di Tracer Study</h1>
+        <p>Temukan data alumni, tracer kuliah, dan tracer kerja di sini.</p>
     </div>
     <script src="{{ asset('js/welcome.js') }}"></script>
     <footer class="footer">
         <div class="footer-content">
-            <p>©2025 TracerStudy by IdrisAriq. | All rights reserved.</p>
+            <p>&copy;2025 TracerStudy by IdrisAriq. | All rights reserved.</p>
             <div class="social-icons">
                 <a href="https://www.google.com/maps/place/SMK+Antartika+1+Sidoarjo/" class="social-icon">
                     <img src="{{ asset('icons/location-removebg-preview.png') }}" alt="Logo">

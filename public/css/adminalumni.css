@@ -43,12 +43,12 @@ h2 {
     background-color: var(--primary-color);
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 .table th,
 .table td {
-    padding: 16px 24px;
+    padding: 12px 20px;
     text-align: left;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
