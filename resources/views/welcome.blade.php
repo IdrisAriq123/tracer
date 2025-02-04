@@ -15,7 +15,7 @@
     <nav>
         <div class="profile">
             <div class="logo">
-                <a href="#">TracerStudy</a>
+                <a href="http://127.0.0.1:8000/alumni/dashboard">TracerStudy</a>
             </div>
         </div>
         <div class="menu">

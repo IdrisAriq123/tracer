@@ -64,16 +64,6 @@
         </div>
     </nav>
     <!-- Profile Information -->
-    <div class="profile-info">
-            <img src="{{ asset('images/profil.png') }}" alt="Profile Picture" class="profile-img">
-            <div class="profile-details">
-                <p><strong>Nama:</strong> {{ $alumnis->nama_depan ?? 'Data alumni tidak ditemukan.' }} {{ $alumnis->nama_belakang ?? '' }}</p>
-                <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
-                <p><strong>Jurusan:</strong> {{ $alumnis->konsentrasiKeahlian->konsentrasi_keahlian ?? 'Jurusan tidak ditemukan.' }}</p>
-                <p><strong>Tahun Lulus:</strong> {{ $alumnis->tahunLulus->tahun_lulus ?? 'Tahun Lulus tidak ditemukan.' }}</p>
-            </div>
-        </div>
-    </div>
 
     <div class="container">
         <h1 class="mt-4">Daftar Alumni</h1>
